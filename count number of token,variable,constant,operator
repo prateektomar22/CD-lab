@@ -1,0 +1,29 @@
+#include<bits/stdc++.h>
+using namespace std;
+int main()
+{
+    string s;
+    cin>>s;
+    int i=0;
+    int c = 0,var = 0,opr = 0;
+    while(i < s.length())
+    {
+        if(isdigit(s[i]) && !(isdigit(s[i+1])))
+          {
+          i=i+2;
+          c++;
+          }
+        else if(isalpha(s[i]))
+        {
+          var++;
+          i++;
+        }
+        else 
+        {
+          opr++;
+          i++;
+        }
+    }
+    cout<<"operators : "<<opr<<" "<<"variables :"<<var<<" "<<"constants :"<<" "<<c<<"tokens :"<<var+opr+c<<endl;
+    return 0;
+}
