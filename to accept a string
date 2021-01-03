@@ -1,32 +1,30 @@
-#include<stdio.h>
+#include<stdio.h> 
 #include<conio.h>
 #include<string.h>
-#include<stdlib.h>
-char a[]100];
-int n,i;
-void main()
-{
-clrscr();
-printf("enter string");
-scanf("%s",&a);
-n=strlen(a);
-
-if(a[0]=="a" && (a[n-1]=="a" || a[n-1]=="b")&& a[n-2]=="c")
-  {
-    for(i=1;i<n-2;i++)
-     {
-        if(a[i]!="b")
-        {
-            printf("\n string is not accepted");
-            getch();
-            exit(0);
-        }
-     }
-     printf("\n string is accepted");
-  }
-  else
-  printf("\n string is not accepted");
-  
-  getch();
-  
+void main() {
+	char string[50];
+	int flag,count=o;
+	clrscr();
+	printf("The grammar is: S->aS, S->Sb, S->ab\n");
+	printf("Enter the string to be checked:\n");
+	gets(string);
+	if(string[0]=='a') {
+		flag=0;
+		for (count=1;string[count-1]!='\0';count++) {
+			if(string[count]=='b') {
+				flag=1;
+				continue;
+			} else if((flag==1)&&(string[count]=='a')) {
+				printf("The string does not belong to the specified grammar");
+				break;
+			} else if(string[count]=='a')
+			continue; else if(flag==1)&&(string[count]='\0')) {
+				printf("String accepted…..!!!!");
+				break;
+			} else {
+				printf("String not accepted");
+			}
+		}
+	}
+	getch();
 }
